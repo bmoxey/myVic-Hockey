@@ -87,9 +87,9 @@ struct TeamsView: View {
                                     .foregroundStyle(Color.white)
                             }
                         })
-                        .confirmationDialog("Are you sure?", isPresented: $showingConfirmation)
+                        .alert("Are you sure?", isPresented: $showingConfirmation)
                         {
-                            Button("Rebuild club/team lists from website?", role: .destructive) {
+                            Button("Rebuild lists", role: .destructive) {
                                 do {
                                     try context.delete(model: Teams.self)
                                     try context.save()
